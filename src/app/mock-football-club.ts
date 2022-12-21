@@ -1,5 +1,5 @@
 import { FootballClub } from "./football-club";
-export const FOOTBALLLEAGUES: FootballClub[] = [
+export const FOOTBALLCLUBS: FootballClub[] = [
     {
         id: 1,
         name: "Paris Saint Germain",
