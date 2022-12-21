@@ -8,7 +8,7 @@ import { FootballClub } from "./football-club";
 })
 export class AppComponent implements OnInit {
     // Creating a list of the football club
-    footballClubList = FOOTBALLCLUBS;
+    footballClubList: FootballClub[] = FOOTBALLCLUBS;
 
     /**
      * Implements OnInit function from the OnInit interface
