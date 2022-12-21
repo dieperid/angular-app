@@ -1,8 +1,7 @@
-export class FootballLeague {
+export class FootballClub {
     id: number;
-    hp: number;
-    cp: number;
     name: string;
     picture: string;
+    players: Array<string>;
     created: Date;
 }
