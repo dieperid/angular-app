@@ -8,6 +8,7 @@
 <!-- display if no club has been selected -->
 <p *ngIf="!footballClubSelected">No club has been found for the moment</p>
 
-<p>{{ footballClubList[0].name }}</p>
-<p>{{ footballClubList[1].name }}</p>
-<p>{{ footballClubList[2].name }}</p>
+<p *ngFor="let club of footballClubList">
+    {{ club.name }}<br />
+    - {{ club.players }}
+</p>
