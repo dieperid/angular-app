@@ -15,16 +15,16 @@ export class AppComponent implements OnInit {
      */
     ngOnInit(): void {
         console.table(this.footballClubList);
-        this.selectFootballClub(this.footballClubList[0]);
     }
 
     /**
      * Function to display a football club name
      * @param footballClubName
      */
-    selectFootballClub(footballClub: FootballClub) {
+    selectFootballClub(event: MouseEvent) {
+        const index: number = Number((event.target as HTMLInputElement).value);
         console.log(
-            `You have clicked on the football club ${footballClub.name}`
+            `You have clicked on the football club ${this.footballClubList[index].name}`
         );
     }
 }
