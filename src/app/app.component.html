@@ -1,3 +1,4 @@
 <h1>List of the football club</h1>
-<input type="number" (click)="selectFootballClub($event)" />
+<input #input (keyup)="(0)" type="text" (click)="selectFootballClub($event)" />
 <p>{{ footballClubList[0].name }}</p>
+<p>{{ input.value }}</p>
