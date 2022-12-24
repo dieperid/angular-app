@@ -1,14 +1,24 @@
-<h1>List of the football club</h1>
-<input #input (keyup.enter)="selectFootballClub(input.value)" type="number" />
+<!--
+    Using materialize for the css class
+-->
+<h1 class="center">List of the football club</h1>
 
-<!-- ngIf to dislay the content if a club has been selected -->
-<p *ngIf="footballClubSelected">
-    You selected this club : {{ footballClubSelected.name }}
-</p>
-<!-- display if no club has been selected -->
-<p *ngIf="!footballClubSelected">No club has been found for the moment</p>
-
-<p *ngFor="let club of footballClubList">
-    {{ club.name }}<br />
-    - {{ club.players }}
-</p>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let club of footballClubList" class="col m3 s6">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img [src]="club.picture" />
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ club.name }}</p>
+                        <p>
+                            <small>{{ club.created }}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
