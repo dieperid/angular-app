@@ -9,6 +9,7 @@ import { FootballClub } from "./football-club";
 export class AppComponent implements OnInit {
     // Creating a list of the football club
     footballClubList: FootballClub[] = FOOTBALLCLUBS;
+    footballClubSelected: FootballClub | undefined;
 
     /**
      * Implements OnInit function from the OnInit interface
@@ -21,10 +22,16 @@ export class AppComponent implements OnInit {
      * Function to display a football club name
      * @param footballClubName
      */
-    selectFootballClub(event: MouseEvent) {
-        const index: number = Number((event.target as HTMLInputElement).value);
-        console.log(
-            `You have clicked on the football club ${this.footballClubList[index].name}`
+    selectFootballClub(footbalClubId: string) {
+        const club: FootballClub | undefined = this.footballClubList.find(
+            (club) => club.id === Number(footbalClubId)
         );
+        if (club) {
+            console.log(`You have requested the football club ${club.name}`);
+            this.footballClubSelected = club;
+        } else {
+            console.log(`You requested a club that doesn't exist`);
+            this.footballClubSelected = undefined;
+        }
     }
 }
