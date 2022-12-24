@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
      */
     selectFootballClub(footballClub: FootballClub) {
         console.log(
-            `You have clicked on the football club ${footballClub.name}`
+            `You have clicked on the football league ${footballClub.name}`
         );
     }
 }
