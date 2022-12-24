@@ -1,7 +1,10 @@
 <h1>List of the football club</h1>
-<input #input (keyup)="selectFootballClub(input.value)" type="number" />
+<input #input (keyup.enter)="selectFootballClub(input.value)" type="number" />
 
-<p>{{ footballClubSelected?.name }}</p>
+<!-- ngIf to dislay the content of the paragraph -->
+<p *ngIf="footballClubSelected">
+    You selected this club : {{ footballClubSelected?.name }}
+</p>
 
 <p>{{ footballClubList[0].name }}</p>
 <p>{{ footballClubList[1].name }}</p>
