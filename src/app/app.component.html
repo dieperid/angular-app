@@ -1,10 +1,12 @@
 <h1>List of the football club</h1>
 <input #input (keyup.enter)="selectFootballClub(input.value)" type="number" />
 
-<!-- ngIf to dislay the content of the paragraph -->
+<!-- ngIf to dislay the content if a club has been selected -->
 <p *ngIf="footballClubSelected">
-    You selected this club : {{ footballClubSelected?.name }}
+    You selected this club : {{ footballClubSelected.name }}
 </p>
+<!-- display if no club has been selected -->
+<p *ngIf="!footballClubSelected">No club has been found for the moment</p>
 
 <p>{{ footballClubList[0].name }}</p>
 <p>{{ footballClubList[1].name }}</p>
