@@ -4,7 +4,7 @@ import { FootballClub } from "./football-club";
 
 @Component({
     selector: "app-root",
-    template: `<h1>List of football club</h1>`,
+    templateUrl: "app.component.html",
 })
 export class AppComponent implements OnInit {
     // Creating a list of the football club
