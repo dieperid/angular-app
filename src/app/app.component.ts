@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         console.table(this.footballClubList);
     }
+    aaaa
 
     /**
      * Function to display a football club name
