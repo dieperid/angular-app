@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
 	 * @param {string} footbalClubId
 	 * @memberof AppComponent
 	 */
-	selectFootballClub(footbalClubId: string) {
+	selectFootballClub(footbalClub: FootballClub) {
 		const club: FootballClub | undefined = this.footballClubList.find(
-			(club) => club.id === Number(footbalClubId)
+			(club) => club.id === Number(footbalClub.id)
 		);
 		if (club) {
 			console.log(`You have requested the football club ${club.name}`);
