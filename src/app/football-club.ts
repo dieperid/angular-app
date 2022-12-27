@@ -1,7 +1,7 @@
 export class FootballClub {
-    id: number;
-    name: string;
-    picture: string;
-    players: Array<string>;
-    created: Date;
+	id: number;
+	name: string;
+	picture: string;
+	players: Array<string>;
+	created: Date;
 }
