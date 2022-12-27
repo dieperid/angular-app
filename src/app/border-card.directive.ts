@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from "@angular/core";
+import { Directive, ElementRef, HostListener, Input } from "@angular/core";
 
 @Directive({
 	selector: "[ftblBorderCard]",
@@ -9,8 +9,11 @@ export class BorderCardDirective {
 		this.setBorder("#f5f5f5");
 	}
 
-	@HostListener("mouseenter") onMouseEnter() {
-		this.setBorder("#009688");
+	@Input("ftblBorderCard") borderColor: string;
+
+	@HostListener("mouseenter")
+	onMouseEnter() {
+		this.setBorder(this.borderColor || "#009688");
 	}
 
 	@HostListener("mouseleave") onMouseLeave() {
