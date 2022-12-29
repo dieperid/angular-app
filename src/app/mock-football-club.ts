@@ -6,6 +6,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://histoiredupsg.fr/wp-content/uploads/2020/04/94461829_586767078860189_8889024092879978496_n.png",
 		players: ["Killian Mbappé", "Lionel Messi", "Neymar JR"],
+		league: "Ligue 1",
 		created: new Date(),
 	},
 	{
@@ -14,6 +15,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://www.fotolip.com/wp-content/uploads/2016/05/Real-Madrid-Logo-3.png",
 		players: ["Karim Benzema", "Vinicius JR", "Aurélien Tchouameni"],
+		league: "LaLiga",
 		created: new Date(),
 	},
 	{
@@ -22,6 +24,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://www.fotolip.com/wp-content/uploads/2016/05/Barcelona-Logo-1_thumb.jpg",
 		players: ["Gavi", "Pedri", "Ousmane Dembelé"],
+		league: "LaLiga",
 		created: new Date(),
 	},
 	{
@@ -30,6 +33,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://logos-download.com/wp-content/uploads/2016/05/Manchester_United_logo_logotype_crest.png",
 		players: ["Antony", "Marcus Rashford", "Raphael Varane"],
+		league: "Premier League",
 		created: new Date(),
 	},
 	{
@@ -38,6 +42,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://www.1min30.com/logo/wp-content/uploads/2017/06/Manchester-City-logo.png",
 		players: ["Manuel Akanji", "Ruben Dias", "Bernardo Silva"],
+		league: "Premier League",
 		created: new Date(),
 	},
 	{
@@ -46,6 +51,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://logodownload.org/wp-content/uploads/2017/02/bayern-munich-logo.png",
 		players: ["Manuel Neuer", "Alphonso Davies", "Thomas Muller"],
+		league: "Bundesliga",
 		created: new Date(),
 	},
 	{
@@ -54,6 +60,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://eastlakesoccerleague.com/wp-content/uploads/2018/10/dortmund-logo-png-transparent.png",
 		players: ["Jude Bellingham", "Gregor Kobel", "Raphael Guerreiro"],
+		league: "Bundesliga",
 		created: new Date(),
 	},
 	{
@@ -62,6 +69,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"http://lofrev.net/wp-content/photos/2014/08/Olympique-de-Marseille-Logo.png",
 		players: ["Jonathan Clauss", "Nuno Tavares", "Jordan Veretout"],
+		league: "Ligue 1",
 		created: new Date(),
 	},
 	{
@@ -69,6 +77,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		name: "Arsenal",
 		picture: "https://wallpapercave.com/wp/wp7422193.png",
 		players: ["Granit Xhaka", "Bukayo Saka", "Martin Odegaard"],
+		league: "Premier League",
 		created: new Date(),
 	},
 	{
@@ -76,6 +85,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		name: "Chelsea",
 		picture: "https://djdhanyjaelani.files.wordpress.com/2011/02/tes5.jpg",
 		players: ["Edouard Mendy", "Thiago Silva", "N'Golo Kante"],
+		league: "Premier League",
 		created: new Date(),
 	},
 	{
@@ -84,6 +94,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://logos-download.com/wp-content/uploads/2016/05/Atletico_Madrid_logo_logotipo_crest.png",
 		players: ["Jan Oblack", "Thomas Lemar", "Koke"],
+		league: "LaLiga",
 		created: new Date(),
 	},
 	{
@@ -92,7 +103,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://logos-download.com/wp-content/uploads/2016/05/Sevilla_FC_logo_logotipo_logotype.jpg",
 		players: ["Bono", "Marcos Acuna", "Alex Telles"],
-
+		league: "LaLiga",
 		created: new Date(),
 	},
 ];
