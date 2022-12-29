@@ -19,7 +19,9 @@
 						<p>{{ club.name }}</p>
 						<p>
 							<!-- using "| date" to display formatted date -->
-							<small>{{ club.created | date }}</small>
+							<small>{{
+								club.created | date : "dd/MM/yy"
+							}}</small>
 						</p>
 					</div>
 				</div>
