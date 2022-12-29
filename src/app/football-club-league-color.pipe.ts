@@ -21,7 +21,7 @@ export class FootballClubLeagueColorPipe implements PipeTransform {
 			case "Ligue 1":
 				color = "blue lighten-1";
 				break;
-			case "Premier League":
+			case "PL":
 				color = "green lighten-1";
 				break;
 			case "Bundesliga":
@@ -34,6 +34,7 @@ export class FootballClubLeagueColorPipe implements PipeTransform {
 				color = "grey";
 				break;
 		}
+		// chip is a materialize class to display a oval around the league
 		return "chip " + color;
 	}
 }

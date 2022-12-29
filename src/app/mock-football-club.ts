@@ -33,7 +33,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://logos-download.com/wp-content/uploads/2016/05/Manchester_United_logo_logotype_crest.png",
 		players: ["Antony", "Marcus Rashford", "Raphael Varane"],
-		league: "Premier League",
+		league: "PL",
 		created: new Date(),
 	},
 	{
@@ -42,7 +42,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		picture:
 			"https://www.1min30.com/logo/wp-content/uploads/2017/06/Manchester-City-logo.png",
 		players: ["Manuel Akanji", "Ruben Dias", "Bernardo Silva"],
-		league: "Premier League",
+		league: "PL",
 		created: new Date(),
 	},
 	{
@@ -77,7 +77,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		name: "Arsenal",
 		picture: "https://wallpapercave.com/wp/wp7422193.png",
 		players: ["Granit Xhaka", "Bukayo Saka", "Martin Odegaard"],
-		league: "Premier League",
+		league: "PL",
 		created: new Date(),
 	},
 	{
@@ -85,7 +85,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		name: "Chelsea",
 		picture: "https://djdhanyjaelani.files.wordpress.com/2011/02/tes5.jpg",
 		players: ["Edouard Mendy", "Thiago Silva", "N'Golo Kante"],
-		league: "Premier League",
+		league: "PL",
 		created: new Date(),
 	},
 	{
