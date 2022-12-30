@@ -1,0 +1,35 @@
+<!--
+    Using materialize for the css class
+-->
+
+<div class="container">
+	<div class="row">
+		<div *ngFor="let club of footballClubList" class="col m3 s6">
+			<div
+				(click)="goToFootballClub(club)"
+				class="card horizontal"
+				ftblBorderCard="red"
+			>
+				<div class="card-image">
+					<img [src]="club.picture" />
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<p>{{ club.name }}</p>
+						<p>
+							<!-- using "| date" to display formatted date -->
+							<small>{{
+								club.created | date : "dd/MM/yy"
+							}}</small>
+						</p>
+						<!-- sending the club league to the pipe (footballClubLeagueColor) to display the color of the league -->
+						<span
+							class="{{ club.league | footballClubLeagueColor }}"
+							>{{ club.league }}</span
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
