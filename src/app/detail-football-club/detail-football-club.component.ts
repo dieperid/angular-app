@@ -10,7 +10,7 @@ import { FOOTBALLCLUBS } from "../mock-football-club";
 })
 export class DetailFootballClubComponent implements OnInit {
 	footballClubList: FootballClub[];
-	footballClub: FootballClub;
+	footballClub: FootballClub | undefined;
 
 	constructor(private route: ActivatedRoute) {}
 
@@ -22,8 +22,10 @@ export class DetailFootballClubComponent implements OnInit {
 			this.route.snapshot.paramMap.get("id")
 		);
 		// get the club and find him in the list of club with the id
-		const club: FootballClub | undefined = this.footballClubList.find(
-			(club) => club.id === clubId
-		);
+		if (clubId) {
+			this.footballClub = this.footballClubList.find(
+				(club) => club.id === clubId
+			);
+		}
 	}
 }

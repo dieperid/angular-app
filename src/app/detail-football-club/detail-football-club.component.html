@@ -1,1 +1,60 @@
-<p>detail-football-club works!</p>
+<div *ngIf="footballClub" class="row">
+	<div class="col s12 m8 offset-m2">
+		<h2 class="header center">{{ footballClub.name }}</h2>
+		<div class="card horizontal hoverable">
+			<div class="card-image">
+				<img [src]="footballClub.picture" />
+			</div>
+			<div class="card-stacked">
+				<div class="card-content">
+					<table class="bordered striped">
+						<tbody>
+							<tr>
+								<td>Nom</td>
+								<td>
+									<strong>{{ footballClub.name }}</strong>
+								</td>
+							</tr>
+							<tr>
+								<td>Players</td>
+								<td>
+									<span
+										*ngFor="
+											let player of footballClub.players
+										"
+										>{{ player }}<br />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>League</td>
+								<td>
+									<span
+										class="{{
+											footballClub.league
+												| footballClubLeagueColor
+										}}"
+										>{{ footballClub.league }}</span
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>Date de création</td>
+								<td>
+									<em>{{
+										footballClub.created
+											| date : "dd/MM/yyyy"
+									}}</em>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- <div class="card-action">
+					<a (click)="goBack()">Retour</a>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</div>
+<h4 *ngIf="!footballClub" class="center">Aucun pokémon à afficher !</h4>
