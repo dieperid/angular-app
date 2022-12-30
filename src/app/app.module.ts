@@ -7,7 +7,7 @@ import { BorderCardDirective } from "./border-card.directive";
 import { FootballClubLeagueColorPipe } from "./football-club-league-color.pipe";
 import { ListFootballClubComponent } from "./list-football-club/list-football-club.component";
 import { DetailFootballClubComponent } from "./detail-football-club/detail-football-club.component";
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 @NgModule({
 	declarations: [
@@ -16,7 +16,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 		FootballClubLeagueColorPipe,
 		ListFootballClubComponent,
 		DetailFootballClubComponent,
-  PageNotFoundComponent,
+		PageNotFoundComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],
