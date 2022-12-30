@@ -4,9 +4,9 @@ import { DetailFootballClubComponent } from "./detail-football-club/detail-footb
 import { ListFootballClubComponent } from "./list-football-club/list-football-club.component";
 
 const routes: Routes = [
-	{ path: "/football-clubs", component: ListFootballClubComponent },
-	{ path: "/football-clubs/:id", component: DetailFootballClubComponent },
-	{ path: "", redirectTo: "/football-clubs", pathMatch: "full" },
+	{ path: "football-clubs", component: ListFootballClubComponent },
+	{ path: "football-clubs/:id", component: DetailFootballClubComponent },
+	{ path: "", redirectTo: "football-clubs", pathMatch: "full" },
 ];
 
 @NgModule({
