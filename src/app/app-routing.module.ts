@@ -5,7 +5,7 @@ import { ListFootballClubComponent } from "./list-football-club/list-football-cl
 
 const routes: Routes = [
 	{ path: "football-clubs", component: ListFootballClubComponent },
-	{ path: "football-clubs/:id", component: DetailFootballClubComponent },
+	{ path: "football-club/:id", component: DetailFootballClubComponent },
 	{ path: "", redirectTo: "football-clubs", pathMatch: "full" },
 ];
 
