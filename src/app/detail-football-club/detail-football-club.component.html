@@ -10,7 +10,7 @@
 					<table class="bordered striped">
 						<tbody>
 							<tr>
-								<td>Nom</td>
+								<td>Name</td>
 								<td>
 									<strong>{{ footballClub.name }}</strong>
 								</td>
@@ -39,7 +39,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Date de création</td>
+								<td>Creation date</td>
 								<td>
 									<em>{{
 										footballClub.created
@@ -51,10 +51,10 @@
 					</table>
 				</div>
 				<div class="card-action">
-					<a (click)="goToFootballClubList()">Retour</a>
+					<a (click)="goToFootballClubList()">Back</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<h4 *ngIf="!footballClub" class="center">Aucun pokémon à afficher !</h4>
+<h4 *ngIf="!footballClub" class="center">No football club to display !</h4>
