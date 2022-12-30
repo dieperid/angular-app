@@ -5,7 +5,11 @@
 <div class="container">
 	<div class="row">
 		<div *ngFor="let club of footballClubList" class="col m3 s6">
-			<div class="card horizontal" ftblBorderCard="red">
+			<div
+				(click)="goToFootballClub(club)"
+				class="card horizontal"
+				ftblBorderCard="red"
+			>
 				<div class="card-image">
 					<img [src]="club.picture" />
 				</div>
