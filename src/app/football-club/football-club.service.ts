@@ -15,7 +15,7 @@ export class FootballClubService {
 	}
 
 	/**
-	 * Function to a football club by his id
+	 * Function to get a football club by his id
 	 *
 	 * @param {number} footballClubId
 	 * @return {*}  {(FootballClub | undefined)}
