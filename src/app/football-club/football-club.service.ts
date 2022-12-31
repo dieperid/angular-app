@@ -2,9 +2,7 @@ import { Injectable } from "@angular/core";
 import { FootballClub } from "./football-club";
 import { FOOTBALLCLUBS } from "./mock-football-club";
 
-@Injectable({
-	providedIn: "root",
-})
+@Injectable()
 export class FootballClubService {
 	/**
 	 * Function to get the list of the football club

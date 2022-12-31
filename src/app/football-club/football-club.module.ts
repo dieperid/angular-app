@@ -5,6 +5,7 @@ import { DetailFootballClubComponent } from "./detail-football-club/detail-footb
 import { BorderCardDirective } from "./border-card.directive";
 import { FootballClubLeagueColorPipe } from "./football-club-league-color.pipe";
 import { RouterModule, Routes } from "@angular/router";
+import { FootballClubService } from "./football-club.service";
 
 const footballClubRoutes: Routes = [
 	{ path: "football-clubs", component: ListFootballClubComponent },
@@ -19,5 +20,7 @@ const footballClubRoutes: Routes = [
 		FootballClubLeagueColorPipe,
 	],
 	imports: [CommonModule, RouterModule.forChild(footballClubRoutes)],
+	// Inject the service only on this module
+	providers: [FootballClubService],
 })
 export class FootballClubModule {}
