@@ -13,12 +13,12 @@ export class ListFootballClubComponent implements OnInit {
 
 	constructor(
 		private router: Router,
-		private footballService: FootballClubService
+		private footballClubService: FootballClubService
 	) {}
 
 	ngOnInit() {
 		// get the list of the club from the Service
-		this.footballClubList = this.footballService.getFootballClubList();
+		this.footballClubList = this.footballClubService.getFootballClubList();
 	}
 
 	goToFootballClub(footballClub: FootballClub) {
