@@ -30,12 +30,22 @@
 								<td>League</td>
 								<td>
 									<span
+										*ngFor="
+											let league of footballClub.league
+										"
+										class="{{
+											league | footballClubLeagueColor
+										}}"
+									>
+										>{{ league }}</span
+									>
+									<!-- <span
 										class="{{
 											footballClub.league
 												| footballClubLeagueColor
 										}}"
 										>{{ footballClub.league }}</span
-									>
+									> -->
 								</td>
 							</tr>
 							<tr>
