@@ -58,7 +58,7 @@ export const FOOTBALLCLUBS: FootballClub[] = [
 		id: 7,
 		name: "Dortmund",
 		picture:
-			"https://eastlakesoccerleagues.com/wp-content/uploads/2018/10/dortmund-logo-png-transparent.png",
+			"https://i1.wp.com/hookedonsoccer.com/wp-content/uploads/2020/05/1200px-Borussia_Dortmund_logo.svg_.png",
 		players: ["Jude Bellingham", "Gregor Kobel", "Raphael Guerreiro"],
 		leagues: ["Bundesliga"],
 		created: new Date(),
