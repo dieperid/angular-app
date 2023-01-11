@@ -55,7 +55,7 @@
 								id="{{ league }}"
 								[value]="league"
 								[checked]="hasLeague(league)"
-								[disabled]="!isLeagueValid(league)"
+								[disabled]="!isLeaguesValid(league)"
 								(change)="selectLeague($event, league)"
 							/>
 							<span [attr.for]="league">

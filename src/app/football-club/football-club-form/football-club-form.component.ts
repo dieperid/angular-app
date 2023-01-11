@@ -51,6 +51,28 @@ export class FootballClubFormComponent {
 		}
 	}
 
+	/**
+	 * Function to check if he can have the league (minimum 1 - maximum 2)
+	 *
+	 * @param {string} type
+	 * @return {*}  {boolean}
+	 * @memberof FootballClubFormComponent
+	 */
+	isLeaguesValid(league: string): boolean {
+		if (this.footballClub.leagues.length == 1) {
+			return false;
+		}
+		if (this.footballClub.leagues.length > 2 && !this.hasLeague(league)) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Function to tell that the submission has worked
+	 *
+	 * @memberof FootballClubFormComponent
+	 */
 	onSubmit() {
 		console.log("Form as been submitted");
 		this.router.navigate(["/football-club", this.footballClub.id]);
