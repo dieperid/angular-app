@@ -42,6 +42,8 @@ export class FootballClubFormComponent {
 		if (isChecked) {
 			this.footballClub.league.push(league);
 		} else {
+			const index = this.footballClub.league.indexOf(league);
+			this.footballClub.league.splice(index, 1);
 		}
 	}
 
