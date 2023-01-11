@@ -1,10 +1,10 @@
-<form *ngIf="footballClub" (ngSubmit)="onSubmit()" #pokemonForm="ngForm">
+<form *ngIf="footballClub" (ngSubmit)="onSubmit()" #footballClubForm="ngForm">
 	<div class="row">
 		<div class="col s8 offset-s2">
 			<div class="card-panel">
-				<!-- Pokemon name -->
+				<!-- football club name -->
 				<div class="form-group">
-					<label for="name">Nom</label>
+					<label for="name">Name</label>
 					<input
 						type="text"
 						class="form-control"
@@ -24,7 +24,7 @@
 					</div>
 				</div>
 
-				<!-- Pokemon hp -->
+				<!-- football club hp -->
 				<div class="form-group">
 					<label for="hp">Point de vie</label>
 					<input
@@ -46,7 +46,7 @@
 					</div>
 				</div>
 
-				<!-- Pokemon cp -->
+				<!-- football club cp -->
 				<div class="form-group">
 					<label for="cp">Dégâts</label>
 					<input
@@ -67,9 +67,9 @@
 					</div>
 				</div>
 
-				<!-- Pokemon types -->
+				<!-- football club types -->
 				<form class="form-group">
-					<label for="types">Types</label>
+					<label for="types">League</label>
 					<p *ngFor="let league of leagues">
 						<label>
 							<input
@@ -96,7 +96,7 @@
 					<button
 						type="submit"
 						class="waves-effect waves-light btn"
-						[disabled]="!pokemonForm.form.valid"
+						[disabled]="!footballClubForm.form.valid"
 					>
 						Valider
 					</button>
@@ -105,4 +105,4 @@
 		</div>
 	</div>
 </form>
-<h3 *ngIf="!pokemon" class="center">Aucun pokémon à éditer...</h3>
+<h3 *ngIf="!footballClub" class="center">Aucun pokémon à éditer...</h3>

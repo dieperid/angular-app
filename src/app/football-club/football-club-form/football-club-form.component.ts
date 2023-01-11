@@ -23,18 +23,18 @@ export class FootballClubFormComponent {
 	}
 
 	/**
-	 * Function to detect if the club has a league
+	 * Function to detect if the club has a leagues
 	 *
 	 * @param {string} league
 	 * @return {*}  {boolean}
 	 * @memberof FootballClubFormComponent
 	 */
-	hasPlayer(league: string): boolean {
-		return this.footballClub.league.includes(league);
+	hasLeague(league: string): boolean {
+		return this.footballClub.leagues.includes(league);
 	}
 
 	/**
-	 * Function to get the selected league
+	 * Function to get the selected leagues
 	 *
 	 * @param {Event} $event
 	 * @param {string} league
@@ -44,10 +44,10 @@ export class FootballClubFormComponent {
 		const isChecked = ($event.target as HTMLInputElement).checked;
 
 		if (isChecked) {
-			this.footballClub.league.push(league);
+			this.footballClub.leagues.push(league);
 		} else {
-			const index = this.footballClub.league.indexOf(league);
-			this.footballClub.league.splice(index, 1);
+			const index = this.footballClub.leagues.indexOf(league);
+			this.footballClub.leagues.splice(index, 1);
 		}
 	}
 

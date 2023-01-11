@@ -3,6 +3,6 @@ export class FootballClub {
 	name: string;
 	picture: string;
 	players: Array<string>;
-	league: Array<string>;
+	leagues: Array<string>;
 	created: Date;
 }
