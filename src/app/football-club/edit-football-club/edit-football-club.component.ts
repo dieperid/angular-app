@@ -5,7 +5,7 @@ import { FootballClubService } from "../football-club.service";
 
 @Component({
 	selector: "app-edit-football-club",
-	template: `<h2>Edit {{ footballClub?.name }}</h2>
+	template: `<h2 class="center">Edit {{ footballClub?.name }}</h2>
 		<p *ngIf="footballClub" class="center">
 			<img [src]="footballClub.picture" alt="" />
 		</p>

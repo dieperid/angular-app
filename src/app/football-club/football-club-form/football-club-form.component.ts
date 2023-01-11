@@ -59,7 +59,7 @@ export class FootballClubFormComponent {
 	 * @memberof FootballClubFormComponent
 	 */
 	isLeaguesValid(league: string): boolean {
-		if (this.footballClub.leagues.length == 1) {
+		if (this.footballClub.leagues.length == 1 && this.hasLeague(league)) {
 			return false;
 		}
 		if (this.footballClub.leagues.length > 2 && !this.hasLeague(league)) {
