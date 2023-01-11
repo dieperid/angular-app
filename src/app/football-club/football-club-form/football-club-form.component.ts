@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 import { FootballClub } from "../football-club";
 import { FOOTBALLCLUBS } from "../mock-football-club";
 import { FootballClubService } from "../football-club.service";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: "app-football-club-form",
@@ -12,7 +13,10 @@ export class FootballClubFormComponent {
 	@Input() footballClub: FootballClub;
 	leagues: string[];
 
-	constructor(private footballClubService: FootballClubService) {}
+	constructor(
+		private footballClubService: FootballClubService,
+		private router: Router
+	) {}
 
 	ngOnInit(): void {
 		this.leagues = this.footballClubService.getFootballClubLeague();
@@ -47,5 +51,8 @@ export class FootballClubFormComponent {
 		}
 	}
 
-	onSubmit() {}
+	onSubmit() {
+		console.log("Form as been submitted");
+		this.router.navigate(["/football-club", this.footballClub.id]);
+	}
 }
