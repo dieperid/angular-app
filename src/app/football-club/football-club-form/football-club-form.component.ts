@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 @Component({
 	selector: "app-football-club-form",
 	templateUrl: "./football-club-form.component.html",
-	styles: [],
+	styleUrls: ["./football-club-form.component.css"],
 })
 export class FootballClubFormComponent {
 	@Input() footballClub: FootballClub;
@@ -54,7 +54,7 @@ export class FootballClubFormComponent {
 	/**
 	 * Function to check if he can have the league (minimum 1 - maximum 2)
 	 *
-	 * @param {string} type
+	 * @param {string} league
 	 * @return {*}  {boolean}
 	 * @memberof FootballClubFormComponent
 	 */
