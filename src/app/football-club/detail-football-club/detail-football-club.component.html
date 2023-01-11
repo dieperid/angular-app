@@ -30,11 +30,14 @@
 								<td>League</td>
 								<td>
 									<span
+										*ngFor="
+											let league of footballClub.leagues
+										"
 										class="{{
-											footballClub.league
-												| footballClubLeagueColor
+											league | footballClubLeagueColor
 										}}"
-										>{{ footballClub.league }}</span
+									>
+										{{ league }}</span
 									>
 								</td>
 							</tr>
@@ -52,6 +55,7 @@
 				</div>
 				<div class="card-action">
 					<a (click)="goToFootballClubList()">Back</a>
+					<a (click)="goToEditFootballCLub(footballClub)">Edit</a>
 				</div>
 			</div>
 		</div>

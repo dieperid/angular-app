@@ -30,7 +30,22 @@ export class DetailFootballClubComponent implements OnInit {
 		}
 	}
 
+	/**
+	 * Function to go to the list of club
+	 *
+	 * @memberof DetailFootballClubComponent
+	 */
 	goToFootballClubList() {
 		this.router.navigate(["/football-clubs"]);
+	}
+
+	/**
+	 * Function to go to the edit form of the club
+	 *
+	 * @param {FootballClub} footballClub
+	 * @memberof DetailFootballClubComponent
+	 */
+	goToEditFootballCLub(footballClub: FootballClub) {
+		this.router.navigate(["/edit/football-club", footballClub.id]);
 	}
 }

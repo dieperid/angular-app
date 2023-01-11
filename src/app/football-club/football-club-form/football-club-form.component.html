@@ -1,0 +1,88 @@
+<form *ngIf="footballClub" (ngSubmit)="onSubmit()" #footballClubForm="ngForm">
+	<div class="row">
+		<div class="col s8 offset-s2">
+			<div class="card-panel">
+				<!-- football club name -->
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input
+						type="text"
+						class="form-control"
+						id="name"
+						required
+						pattern="^[a-zA-Z0-9àéèç ]{1,25}$"
+						[(ngModel)]="footballClub.name"
+						name="name"
+						#name="ngModel"
+					/>
+					<div
+						[hidden]="name.valid || name.pristine"
+						class="card-panel red accent-1"
+					>
+						The name of the club is required (1-25).
+					</div>
+				</div>
+
+				<!-- football club player -->
+				<!-- <div class="form-group">
+					<label for="hp">Players</label>
+					<p *ngFor="let player of footballClub.players"></p>
+					<input
+						type="number"
+						class="form-control"
+						id="hp"
+						required
+						pattern="^[0-9]{1,3}$"
+						[(ngModel)]="footballClub.hp"
+						name="hp"
+						#hp="ngModel"
+					/>
+					<div
+						[hidden]="hp.valid || hp.pristine"
+						class="card-panel red accent-1"
+					></div>
+				</div> -->
+
+				<!-- football club leagues -->
+				<form class="form-group">
+					<label for="types">League</label>
+					<p *ngFor="let league of leagues">
+						<label>
+							<input
+								type="checkbox"
+								class="filled-in"
+								id="{{ league }}"
+								[value]="league"
+								[checked]="hasLeague(league)"
+								[disabled]="!isLeaguesValid(league)"
+								(change)="selectLeague($event, league)"
+							/>
+							<span [attr.for]="league">
+								<div
+									class="{{
+										league | footballClubLeagueColor
+									}}"
+								>
+									{{ league }}
+								</div>
+							</span>
+						</label>
+					</p>
+				</form>
+
+				<!-- Submit button -->
+				<div class="divider"></div>
+				<div class="section center">
+					<button
+						type="submit"
+						class="waves-effect waves-light btn"
+						[disabled]="!footballClubForm.form.valid"
+					>
+						Validate
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<h3 *ngIf="!footballClub" class="center">No club to edit...</h3>
