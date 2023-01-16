@@ -30,9 +30,11 @@ export class EditFootballClubComponent implements OnInit {
 		);
 
 		if (footballClubId) {
-			this.footballClub = this.footballClubService.getFootballClubById(
-				+footballClubId
-			);
+			this.footballClubService
+				.getFootballClubById(Number(footballClubId))
+				.subscribe(
+					(footballClub) => (this.footballClub = footballClub)
+				);
 		} else {
 			this.footballClub = undefined;
 		}
