@@ -1,17 +1,27 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { catchError, Observable, of, tap } from "rxjs";
 import { FootballClub } from "./football-club";
 import { FOOTBALLCLUBS } from "./mock-football-club";
 
 @Injectable()
 export class FootballClubService {
+	constructor(private http: HttpClient) {}
+
 	/**
 	 * Function to get the list of the football club
 	 *
 	 * @return {*}  {FootballClub[]}
 	 * @memberof FootballClubService
 	 */
-	getFootballClubList(): FootballClub[] {
-		return FOOTBALLCLUBS;
+	getFootballClubList(): Observable<FootballClub[]> {
+		return this.http.get<FootballClub[]>("api/football-clubs").pipe(
+			tap((response: any) => console.table(response)),
+			catchError((error) => {
+				console.log(error);
+				return of([]);
+			})
+		);
 	}
 
 	/**
