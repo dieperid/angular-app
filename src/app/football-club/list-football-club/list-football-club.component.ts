@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { VirtualTimeScheduler } from "rxjs";
 import { FootballClub } from "../football-club";
 import { FootballClubService } from "../football-club.service";
 
@@ -18,7 +19,12 @@ export class ListFootballClubComponent implements OnInit {
 
 	ngOnInit() {
 		// get the list of the club from the Service
-		this.footballClubList = this.footballClubService.getFootballClubList();
+		// subscribe to get the football list and push it to the component
+		this.footballClubService
+			.getFootballClubList()
+			.subscribe(
+				(footballClubList) => (this.footballClubList = footballClubList)
+			);
 	}
 
 	goToFootballClub(footballClub: FootballClub) {
