@@ -9,6 +9,7 @@ import { FOOTBALLCLUBS } from "./football-club/mock-football-club";
 export class InMemoryDataService implements InMemoryDbService {
 	constructor() {}
 	createDb() {
-		return FOOTBALLCLUBS;
+		const footballClubs = FOOTBALLCLUBS;
+		return { footballClubs };
 	}
 }

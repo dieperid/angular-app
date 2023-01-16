@@ -14,7 +14,7 @@ export class FootballClubService {
 	 * @memberof FootballClubService
 	 */
 	getFootballClubList(): Observable<FootballClub[]> {
-		return this.http.get<FootballClub[]>("api/football-clubs").pipe(
+		return this.http.get<FootballClub[]>("api/footballClubs").pipe(
 			tap((response) => this.log(response)),
 			catchError((error) => this.handleError(error, []))
 		);
@@ -31,7 +31,7 @@ export class FootballClubService {
 		footballClubId: number
 	): Observable<FootballClub | undefined> {
 		return this.http
-			.get<FootballClub>(`api/football-clubs/${footballClubId}`)
+			.get<FootballClub>(`api/footballClubs/${footballClubId}`)
 			.pipe(
 				tap((response) => this.log(response)),
 				catchError((error) => this.handleError(error, undefined))
