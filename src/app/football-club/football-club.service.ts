@@ -16,7 +16,7 @@ export class FootballClubService {
 	 */
 	getFootballClubList(): Observable<FootballClub[]> {
 		return this.http.get<FootballClub[]>("api/football-clubs").pipe(
-			tap((response: any) => console.table(response)),
+			tap((footballClubList: any) => console.table(footballClubList)),
 			catchError((error) => {
 				console.log(error);
 				return of([]);
@@ -31,10 +31,18 @@ export class FootballClubService {
 	 * @return {*}  {(FootballClub | undefined)}
 	 * @memberof FootballClubService
 	 */
-	getFootballClubById(footballClubId: number): FootballClub | undefined {
-		return FOOTBALLCLUBS.find(
-			(footballClub) => footballClub.id == footballClubId
-		);
+	getFootballClubById(
+		footballClubId: number
+	): Observable<FootballClub | undefined> {
+		return this.http
+			.get<FootballClub>(`api/football-clubs/${footballClubId}`)
+			.pipe(
+				tap((footballClub) => console.log(footballClub)),
+				catchError((error) => {
+					console.log(error);
+					return of(undefined);
+				})
+			);
 	}
 
 	/**
