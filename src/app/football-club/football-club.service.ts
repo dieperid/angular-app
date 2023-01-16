@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, Observable, of, tap } from "rxjs";
 import { FootballClub } from "./football-club";
@@ -39,6 +39,28 @@ export class FootballClubService {
 	}
 
 	/**
+	 * Function to update footballClub on server side (save the data)
+	 *
+	 * @param {FootballClub} footballClub
+	 * @return {*}  {(Observable<FootballClub | undefined>)}
+	 * @memberof FootballClubService
+	 */
+	updateFootballClub(
+		footballClub: FootballClub
+	): Observable<FootballClub | undefined> {
+		const httpOptions = {
+			headers: new HttpHeaders({ "Content-Type": "application/json" }),
+		};
+
+		return this.http
+			.put("api/footballClubs", footballClub, httpOptions)
+			.pipe(
+				tap((response) => this.log(response)),
+				catchError((error) => this.handleError(error, undefined))
+			);
+	}
+
+	/**
 	 * Function to return an error message
 	 *
 	 * @private
@@ -59,7 +81,7 @@ export class FootballClubService {
 	 * @param {(FootballClub[] | FootballClub | undefined)} response
 	 * @memberof FootballClubService
 	 */
-	private log(response: FootballClub[] | FootballClub | undefined) {
+	private log(response: any) {
 		console.table(response);
 	}
 
