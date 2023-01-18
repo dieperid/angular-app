@@ -13,6 +13,7 @@ import { AddFootballClubComponent } from "./add-football-club/add-football-club.
 
 const footballClubRoutes: Routes = [
 	{ path: "edit/football-club/:id", component: EditFootballClubComponent },
+	{ path: "football-club/add", component: AddFootballClubComponent },
 	{ path: "football-clubs", component: ListFootballClubComponent },
 	{ path: "football-club/:id", component: DetailFootballClubComponent },
 ];

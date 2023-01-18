@@ -1,4 +1,5 @@
 export class FootballClub {
+	id: number;
 	name: string;
 	picture: string;
 	players: string[];
@@ -7,7 +8,7 @@ export class FootballClub {
 
 	constructor(
 		name: string = "Enter a name",
-		picture: string = "",
+		picture: string = "Enter a link (https://xxxxx",
 		players: string[] = [""],
 		leagues: string[] = [""],
 		created: Date = new Date()
