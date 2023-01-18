@@ -8,6 +8,26 @@ export class FootballClubService {
 	constructor(private http: HttpClient) {}
 
 	/**
+	 * Function to add a football club (server side)
+	 *
+	 * @param {FootballClub} footballClub
+	 * @return {*}  {Observable<null>}
+	 * @memberof FootballClubService
+	 */
+	addFootballClub(footballClub: FootballClub): Observable<null> {
+		const httpOptions = {
+			headers: new HttpHeaders({ "Content-Type": "application/json" }),
+		};
+
+		return this.http
+			.post("api/footballClubs", footballClub, httpOptions)
+			.pipe(
+				tap((response) => this.log(response)),
+				catchError((error) => this.handleError(error, undefined))
+			);
+	}
+
+	/**
 	 * Function to update footballClub on server side (save the data)
 	 *
 	 * @param {FootballClub} footballClub
