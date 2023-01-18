@@ -8,37 +8,6 @@ export class FootballClubService {
 	constructor(private http: HttpClient) {}
 
 	/**
-	 * Function to get the list of the football club
-	 *
-	 * @return {*}  {FootballClub[]}
-	 * @memberof FootballClubService
-	 */
-	getFootballClubList(): Observable<FootballClub[]> {
-		return this.http.get<FootballClub[]>("api/footballClubs").pipe(
-			tap((response) => this.log(response)),
-			catchError((error) => this.handleError(error, []))
-		);
-	}
-
-	/**
-	 * Function to get a football club by his id
-	 *
-	 * @param {number} footballClubId
-	 * @return {*}  {(FootballClub | undefined)}
-	 * @memberof FootballClubService
-	 */
-	getFootballClubById(
-		footballClubId: number
-	): Observable<FootballClub | undefined> {
-		return this.http
-			.get<FootballClub>(`api/footballClubs/${footballClubId}`)
-			.pipe(
-				tap((response) => this.log(response)),
-				catchError((error) => this.handleError(error, undefined))
-			);
-	}
-
-	/**
 	 * Function to update footballClub on server side (save the data)
 	 *
 	 * @param {FootballClub} footballClub
@@ -73,6 +42,47 @@ export class FootballClubService {
 	}
 
 	/**
+	 * Function to get the list of the football club
+	 *
+	 * @return {*}  {FootballClub[]}
+	 * @memberof FootballClubService
+	 */
+	getFootballClubList(): Observable<FootballClub[]> {
+		return this.http.get<FootballClub[]>("api/footballClubs").pipe(
+			tap((response) => this.log(response)),
+			catchError((error) => this.handleError(error, []))
+		);
+	}
+
+	/**
+	 * Function to get a football club by his id
+	 *
+	 * @param {number} footballClubId
+	 * @return {*}  {(FootballClub | undefined)}
+	 * @memberof FootballClubService
+	 */
+	getFootballClubById(
+		footballClubId: number
+	): Observable<FootballClub | undefined> {
+		return this.http
+			.get<FootballClub>(`api/footballClubs/${footballClubId}`)
+			.pipe(
+				tap((response) => this.log(response)),
+				catchError((error) => this.handleError(error, undefined))
+			);
+	}
+
+	/**
+	 * Function to get the leagues of the football clubs
+	 *
+	 * @return {*}  {string[]}
+	 * @memberof FootballClubService
+	 */
+	getFootballClubLeague(): string[] {
+		return ["Ligue 1", "LaLiga", "PL", "Bundesliga", "Serie A"];
+	}
+
+	/**
 	 * Function to return an error message
 	 *
 	 * @private
@@ -95,15 +105,5 @@ export class FootballClubService {
 	 */
 	private log(response: any) {
 		console.table(response);
-	}
-
-	/**
-	 * Function to get the leagues of the football clubs
-	 *
-	 * @return {*}  {string[]}
-	 * @memberof FootballClubService
-	 */
-	getFootballClubLeague(): string[] {
-		return ["Ligue 1", "LaLiga", "PL", "Bundesliga", "Serie A"];
 	}
 }

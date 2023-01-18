@@ -34,18 +34,6 @@ export class DetailFootballClubComponent implements OnInit {
 	}
 
 	/**
-	 * Function to delete a football club
-	 *
-	 * @param {FootballClub} footballClub
-	 * @memberof DetailFootballClubComponent
-	 */
-	deleteFootballClub(footballClub: FootballClub) {
-		this.footballClubService
-			.deleteFootballClubById(footballClub.id)
-			.subscribe(() => this.goToFootballClubList);
-	}
-
-	/**
 	 * Function to go to the list of club
 	 *
 	 * @memberof DetailFootballClubComponent
@@ -62,5 +50,17 @@ export class DetailFootballClubComponent implements OnInit {
 	 */
 	goToEditFootballCLub(footballClub: FootballClub) {
 		this.router.navigate(["/edit/football-club", footballClub.id]);
+	}
+
+	/**
+	 * Function to delete a football club
+	 *
+	 * @param {FootballClub} footballClub
+	 * @memberof DetailFootballClubComponent
+	 */
+	deleteFootballClub(footballClub: FootballClub) {
+		this.footballClubService
+			.deleteFootballClubById(footballClub.id)
+			.subscribe(() => this.goToFootballClubList);
 	}
 }
