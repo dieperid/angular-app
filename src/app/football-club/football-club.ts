@@ -8,7 +8,7 @@ export class FootballClub {
 
 	constructor(
 		name: string = "Enter a name",
-		picture: string = "Enter a link (https://xxxxx",
+		picture: string = "Enter a link (https://xxxxx)",
 		players: string[] = [""],
 		leagues: string[] = [""],
 		created: Date = new Date()

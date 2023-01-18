@@ -23,6 +23,24 @@
 					</div>
 				</div>
 
+				<div *ngIf="isAddForm" class="form-group">
+					<label for="picture">Picture</label>
+					<input
+						type="text"
+						class="form-control"
+						id="picture"
+						required
+						[(ngModel)]="footballClub.picture"
+						name="picture"
+						#picture="ngModel"
+					/>
+					<div
+						[hidden]="picture.valid || picture.pristine"
+						class="card-panel red accent-1"
+					>
+						The picture of the football club is required.
+					</div>
+				</div>
 				<!-- football club player -->
 				<!-- <div class="form-group">
 					<label for="hp">Players</label>
