@@ -42,12 +42,10 @@ export class FootballClubService {
 	 * Function to update footballClub on server side (save the data)
 	 *
 	 * @param {FootballClub} footballClub
-	 * @return {*}  {(Observable<FootballClub | undefined>)}
+	 * @return {*}  {(Observable<null>)}
 	 * @memberof FootballClubService
 	 */
-	updateFootballClub(
-		footballClub: FootballClub
-	): Observable<FootballClub | undefined> {
+	updateFootballClub(footballClub: FootballClub): Observable<null> {
 		const httpOptions = {
 			headers: new HttpHeaders({ "Content-Type": "application/json" }),
 		};

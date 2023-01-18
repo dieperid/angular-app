@@ -74,7 +74,10 @@ export class FootballClubFormComponent {
 	 * @memberof FootballClubFormComponent
 	 */
 	onSubmit() {
-		console.log("Form as been submitted");
-		this.router.navigate(["/football-club", this.footballClub.id]);
+		this.footballClubService
+			.updateFootballClub(this.footballClub)
+			.subscribe(() =>
+				this.router.navigate(["/football-club", this.footballClub.id])
+			);
 	}
 }
