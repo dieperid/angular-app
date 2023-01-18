@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
 import { FootballClub } from "../football-club";
-import { FOOTBALLCLUBS } from "../mock-football-club";
 import { FootballClubService } from "../football-club.service";
 import { Router } from "@angular/router";
 
@@ -12,6 +11,7 @@ import { Router } from "@angular/router";
 export class FootballClubFormComponent {
 	@Input() footballClub: FootballClub;
 	leagues: string[];
+	isAddForm: boolean;
 
 	constructor(
 		private footballClubService: FootballClubService,
@@ -20,6 +20,7 @@ export class FootballClubFormComponent {
 
 	ngOnInit(): void {
 		this.leagues = this.footballClubService.getFootballClubLeague();
+		this.isAddForm = this.router.url.includes("add");
 	}
 
 	/**
@@ -74,7 +75,24 @@ export class FootballClubFormComponent {
 	 * @memberof FootballClubFormComponent
 	 */
 	onSubmit() {
-		console.log("Form as been submitted");
-		this.router.navigate(["/football-club", this.footballClub.id]);
+		// if it's an addition of a club
+		if (this.isAddForm) {
+			this.footballClubService
+				.addFootballClub(this.footballClub)
+				.subscribe((footballClub: FootballClub) =>
+					this.router.navigate(["/football-club", footballClub.id])
+				);
+		}
+		// if it's a modification of a club
+		else {
+			this.footballClubService
+				.updateFootballClub(this.footballClub)
+				.subscribe(() =>
+					this.router.navigate([
+						"/football-club",
+						this.footballClub.id,
+					])
+				);
+		}
 	}
 }
