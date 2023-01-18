@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
 import { FootballClub } from "../football-club";
-import { FOOTBALLCLUBS } from "../mock-football-club";
 import { FootballClubService } from "../football-club.service";
 import { Router } from "@angular/router";
 
@@ -80,11 +79,8 @@ export class FootballClubFormComponent {
 		if (this.isAddForm) {
 			this.footballClubService
 				.addFootballClub(this.footballClub)
-				.subscribe(() =>
-					this.router.navigate([
-						"/football-club",
-						this.footballClub.id,
-					])
+				.subscribe((footballClub: FootballClub) =>
+					this.router.navigate(["/football-club", footballClub.id])
 				);
 		}
 		// if it's a modification of a club
