@@ -99,7 +99,7 @@ export class FootballClubService {
 	 * @memberof FootballClubService
 	 */
 	getFootballClubLeague(): string[] {
-		return ["Ligue 1", "LaLiga", "PL", "Bundesliga", "Serie A"];
+		return ["Default", "Ligue 1", "LaLiga", "PL", "Bundesliga", "Serie A"];
 	}
 
 	/**

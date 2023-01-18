@@ -10,7 +10,7 @@ export class FootballClub {
 		name: string = "Enter a name",
 		picture: string = "Enter a link (https://xxxxx)",
 		players: string[] = [""],
-		leagues: string[] = [""],
+		leagues: string[] = ["Default"],
 		created: Date = new Date()
 	) {
 		this.name = name;
