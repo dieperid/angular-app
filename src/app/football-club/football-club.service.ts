@@ -65,7 +65,7 @@ export class FootballClubService {
 	 *
 	 * @private
 	 * @param {Error} error
-	 * @param {([] | undefined)} errorValue
+	 * @param {*} errorValue
 	 * @return {*}
 	 * @memberof FootballClubService
 	 */
@@ -78,7 +78,7 @@ export class FootballClubService {
 	 * Function to log a response
 	 *
 	 * @private
-	 * @param {(FootballClub[] | FootballClub | undefined)} response
+	 * @param {*} response
 	 * @memberof FootballClubService
 	 */
 	private log(response: any) {
