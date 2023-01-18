@@ -8,7 +8,6 @@ import { FootballClub } from "../football-club";
 		<app-football-club-form [footballClub]="footballClub">
 		</app-football-club-form>
 	`,
-	styles: [],
 })
 export class AddFootballClubComponent implements OnInit {
 	footballClub: FootballClub;

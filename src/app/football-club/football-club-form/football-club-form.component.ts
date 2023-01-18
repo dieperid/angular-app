@@ -12,6 +12,7 @@ import { Router } from "@angular/router";
 export class FootballClubFormComponent {
 	@Input() footballClub: FootballClub;
 	leagues: string[];
+	isAddForm: boolean;
 
 	constructor(
 		private footballClubService: FootballClubService,
@@ -20,6 +21,7 @@ export class FootballClubFormComponent {
 
 	ngOnInit(): void {
 		this.leagues = this.footballClubService.getFootballClubLeague();
+		this.isAddForm = this.router.url.includes("add");
 	}
 
 	/**
@@ -74,10 +76,27 @@ export class FootballClubFormComponent {
 	 * @memberof FootballClubFormComponent
 	 */
 	onSubmit() {
-		this.footballClubService
-			.updateFootballClub(this.footballClub)
-			.subscribe(() =>
-				this.router.navigate(["/football-club", this.footballClub.id])
-			);
+		// if it's an addition of a club
+		if (this.isAddForm) {
+			this.footballClubService
+				.addFootballClub(this.footballClub)
+				.subscribe(() =>
+					this.router.navigate([
+						"/football-club",
+						this.footballClub.id,
+					])
+				);
+		}
+		// if it's a modification of a club
+		else {
+			this.footballClubService
+				.updateFootballClub(this.footballClub)
+				.subscribe(() =>
+					this.router.navigate([
+						"/football-club",
+						this.footballClub.id,
+					])
+				);
+		}
 	}
 }
