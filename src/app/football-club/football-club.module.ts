@@ -9,6 +9,7 @@ import { FootballClubService } from "./football-club.service";
 import { FormsModule } from "@angular/forms";
 import { FootballClubFormComponent } from "./football-club-form/football-club-form.component";
 import { EditFootballClubComponent } from "./edit-football-club/edit-football-club.component";
+import { AddFootballClubComponent } from './add-football-club/add-football-club.component';
 
 const footballClubRoutes: Routes = [
 	{ path: "edit/football-club/:id", component: EditFootballClubComponent },
@@ -24,6 +25,7 @@ const footballClubRoutes: Routes = [
 		FootballClubLeagueColorPipe,
 		FootballClubFormComponent,
 		EditFootballClubComponent,
+  AddFootballClubComponent,
 	],
 	imports: [
 		CommonModule,
