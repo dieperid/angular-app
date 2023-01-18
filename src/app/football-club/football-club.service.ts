@@ -59,6 +59,20 @@ export class FootballClubService {
 	}
 
 	/**
+	 * Function to delete a football club
+	 *
+	 * @param {Number} footballClubId
+	 * @return {*}  {Observable<null>}
+	 * @memberof FootballClubService
+	 */
+	deleteFootballClubById(footballClubId: Number): Observable<null> {
+		return this.http.delete(`api/footballClubs/${footballClubId}`).pipe(
+			tap((response) => this.log(response)),
+			catchError((error) => this.handleError(error, undefined))
+		);
+	}
+
+	/**
 	 * Function to return an error message
 	 *
 	 * @private
