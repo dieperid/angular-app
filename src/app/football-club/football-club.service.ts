@@ -11,16 +11,16 @@ export class FootballClubService {
 	 * Function to add a football club (server side)
 	 *
 	 * @param {FootballClub} footballClub
-	 * @return {*}  {Observable<null>}
+	 * @return {*}  A FootballClub object
 	 * @memberof FootballClubService
 	 */
-	addFootballClub(footballClub: FootballClub): Observable<null> {
+	addFootballClub(footballClub: FootballClub): Observable<FootballClub> {
 		const httpOptions = {
 			headers: new HttpHeaders({ "Content-Type": "application/json" }),
 		};
 
 		return this.http
-			.post("api/footballClubs", footballClub, httpOptions)
+			.post<FootballClub>("api/footballClubs", footballClub, httpOptions)
 			.pipe(
 				tap((response) => this.log(response)),
 				catchError((error) => this.handleError(error, undefined))
