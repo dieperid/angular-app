@@ -59,7 +59,7 @@ export class FootballClubService {
 	}
 
 	/**
-	 * Function to delete a football club
+	 * Function to delete a football club by his id
 	 *
 	 * @param {Number} footballClubId
 	 * @return {*}  {Observable<null>}

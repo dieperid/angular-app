@@ -34,6 +34,18 @@ export class DetailFootballClubComponent implements OnInit {
 	}
 
 	/**
+	 * Function to delete a football club
+	 *
+	 * @param {FootballClub} footballClub
+	 * @memberof DetailFootballClubComponent
+	 */
+	deleteFootballClub(footballClub: FootballClub) {
+		this.footballClubService
+			.deleteFootballClubById(footballClub.id)
+			.subscribe(() => this.goToFootballClubList);
+	}
+
+	/**
 	 * Function to go to the list of club
 	 *
 	 * @memberof DetailFootballClubComponent
