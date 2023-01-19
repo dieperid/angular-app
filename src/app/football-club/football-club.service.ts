@@ -100,6 +100,9 @@ export class FootballClubService {
 	 * @memberof FootballClubService
 	 */
 	searchFootballClubList(param: string): Observable<FootballClub[]> {
+		if (param.length <= 1) {
+			return of([]);
+		}
 		return this.http
 			.get<FootballClub[]>(`api/footballClubs/?name=${param}`)
 			.pipe(
