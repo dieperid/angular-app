@@ -93,6 +93,22 @@ export class FootballClubService {
 	}
 
 	/**
+	 * Function to search a club by using a parameter
+	 *
+	 * @param {string} param
+	 * @return {*}  {Observable<FootballClub[]>}
+	 * @memberof FootballClubService
+	 */
+	searchFootballClubList(param: string): Observable<FootballClub[]> {
+		return this.http
+			.get<FootballClub[]>(`api/footballClubs/?name=${param}`)
+			.pipe(
+				tap((response) => this.log(response)),
+				catchError((error) => this.handleError(error, []))
+			);
+	}
+
+	/**
 	 * Function to get the leagues of the football clubs
 	 *
 	 * @return {*}  {string[]}
