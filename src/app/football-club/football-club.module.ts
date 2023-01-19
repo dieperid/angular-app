@@ -10,6 +10,8 @@ import { FormsModule } from "@angular/forms";
 import { FootballClubFormComponent } from "./football-club-form/football-club-form.component";
 import { EditFootballClubComponent } from "./edit-football-club/edit-football-club.component";
 import { AddFootballClubComponent } from "./add-football-club/add-football-club.component";
+import { SearchFootballClubComponent } from "./search-football-club/search-football-club.component";
+import { LoaderComponent } from "./loader/loader.component";
 
 const footballClubRoutes: Routes = [
 	{ path: "edit/football-club/:id", component: EditFootballClubComponent },
@@ -27,6 +29,8 @@ const footballClubRoutes: Routes = [
 		FootballClubFormComponent,
 		EditFootballClubComponent,
 		AddFootballClubComponent,
+		SearchFootballClubComponent,
+		LoaderComponent,
 	],
 	imports: [
 		CommonModule,

@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col s12 m6 offset-m3">
+		<div class="card">
+			<div class="card-content">
+				<div class="input-field">
+					<!-- Get the content of the input and send it to the search function -->
+					<input
+						#searchBox
+						(keyup)="search(searchBox.value)"
+						type="text"
+						placeholder="Search a football club"
+					/>
+					<div class="collection">
+						<a
+							*ngFor="let footballClub of footballClubs$ | async"
+							(click)="goToDetailFootballClub(footballClub)"
+							class="collection-item"
+						>
+							{{ footballClub.name }}</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
