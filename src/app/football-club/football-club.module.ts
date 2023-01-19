@@ -11,6 +11,7 @@ import { FootballClubFormComponent } from "./football-club-form/football-club-fo
 import { EditFootballClubComponent } from "./edit-football-club/edit-football-club.component";
 import { AddFootballClubComponent } from "./add-football-club/add-football-club.component";
 import { SearchFootballClubComponent } from "./search-football-club/search-football-club.component";
+import { LoaderComponent } from "./loader/loader.component";
 
 const footballClubRoutes: Routes = [
 	{ path: "edit/football-club/:id", component: EditFootballClubComponent },
@@ -29,6 +30,7 @@ const footballClubRoutes: Routes = [
 		EditFootballClubComponent,
 		AddFootballClubComponent,
 		SearchFootballClubComponent,
+		LoaderComponent,
 	],
 	imports: [
 		CommonModule,
