@@ -10,6 +10,15 @@
 						type="text"
 						placeholder="Search a football club"
 					/>
+					<div class="collection">
+						<a
+							*ngFor="let footballClub of footballClubs$ | async"
+							(click)="goToDetailFootballClub(footballClub)"
+							class="collection-item"
+						>
+							{{ footballClub }}</a
+						>
+					</div>
 				</div>
 			</div>
 		</div>
