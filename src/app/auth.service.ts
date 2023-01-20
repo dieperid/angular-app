@@ -8,6 +8,14 @@ export class AuthService {
 	isLoggedIn: boolean = false;
 	redirectUrl: string;
 
+	/**
+	 * Function lo check the login information of the user
+	 *
+	 * @param {string} username
+	 * @param {string} password
+	 * @return {*}  {Observable<boolean>}
+	 * @memberof AuthService
+	 */
 	login(username: string, password: string): Observable<boolean> {
 		const isLoggedIn = username == "dieperid" && password == "dieperid";
 
@@ -17,6 +25,11 @@ export class AuthService {
 		);
 	}
 
+	/**
+	 * Function to logout the user
+	 *
+	 * @memberof AuthService
+	 */
 	logout() {
 		this.isLoggedIn = false;
 	}
