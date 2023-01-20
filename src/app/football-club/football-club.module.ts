@@ -20,9 +20,21 @@ const footballClubRoutes: Routes = [
 		component: EditFootballClubComponent,
 		canActivate: [AuthGuard],
 	},
-	{ path: "football-club/add", component: AddFootballClubComponent },
-	{ path: "football-clubs", component: ListFootballClubComponent },
-	{ path: "football-club/:id", component: DetailFootballClubComponent },
+	{
+		path: "football-club/add",
+		component: AddFootballClubComponent,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: "football-clubs",
+		component: ListFootballClubComponent,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: "football-club/:id",
+		component: DetailFootballClubComponent,
+		canActivate: [AuthGuard],
+	},
 ];
 
 @NgModule({
