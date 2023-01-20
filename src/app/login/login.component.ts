@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 		if (this.authService.isLoggedIn) {
 			this.message = "You are connected";
 		} else {
-			this.message = "Username of password is incorrect";
+			this.message = "Username or password is incorrect";
 		}
 	}
 
