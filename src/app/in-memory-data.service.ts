@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
-import { InMemoryDbService, RequestInfo } from "angular-in-memory-web-api";
-import { Observable } from "rxjs";
+import { InMemoryDbService } from "angular-in-memory-web-api";
 import { FOOTBALLCLUBS } from "./football-club/mock-football-club";
 
 @Injectable({
