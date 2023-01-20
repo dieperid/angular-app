@@ -12,9 +12,14 @@ import { EditFootballClubComponent } from "./edit-football-club/edit-football-cl
 import { AddFootballClubComponent } from "./add-football-club/add-football-club.component";
 import { SearchFootballClubComponent } from "./search-football-club/search-football-club.component";
 import { LoaderComponent } from "./loader/loader.component";
+import { AuthGuard } from "../auth.guard";
 
 const footballClubRoutes: Routes = [
-	{ path: "edit/football-club/:id", component: EditFootballClubComponent },
+	{
+		path: "edit/football-club/:id",
+		component: EditFootballClubComponent,
+		canActivate: [AuthGuard],
+	},
 	{ path: "football-club/add", component: AddFootballClubComponent },
 	{ path: "football-clubs", component: ListFootballClubComponent },
 	{ path: "football-club/:id", component: DetailFootballClubComponent },
