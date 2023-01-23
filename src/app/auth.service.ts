@@ -17,7 +17,7 @@ export class AuthService {
 	 * @memberof AuthService
 	 */
 	login(username: string, password: string): Observable<boolean> {
-		const isLoggedIn = username == "dieperid" && password == "dieperid";
+		const isLoggedIn = username == "root" && password == "root";
 
 		return of(isLoggedIn).pipe(
 			delay(1000),
